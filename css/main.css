@@ -1,0 +1,654 @@
+@font-face {
+    font-family: circularPro;
+    src: url(/fonts/lineto-circular-book.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: circularPro, "Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+    background-color: #fbf7ef;
+}
+
+*:focus-visible {
+    outline: 4px solid #d3c531;     
+    border-radius: 3px;
+}
+
+svg {
+    fill: #fff;
+    height: 40px;
+    width: 40px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.no-display {
+    /* transform: translateX(-100%); */
+    position: absolute;
+    left: -100vw;
+    color: #000;
+    background-color: #fff;
+}
+
+header {
+    background-color: #541554;
+    color: #fff;
+    padding: 1rem;
+}
+
+header a {
+    font-size: 1.1rem;
+}
+
+.upper-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.slacklogo svg {
+    width: 100px;   
+    fill: #fff;
+}
+
+nav {
+    position: relative;
+    /* left: 1rem; */
+}
+
+nav li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.drop-down::after {
+    content: '\25BC';
+    /* display: block; */
+    margin-left: 2px;
+    font-size: 10px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: -1rem;
+}
+
+.right-header a,
+.right-header svg {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.right-header svg {
+    padding-top: 10px;
+}
+
+header .button {
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+header .button ~ .button {
+    margin-left: 1rem;
+    background-color: #fff;
+    color: #541554;
+    border: none;
+}
+
+use[href$="hamburger"] {
+    display: none;
+    width: 100px;
+}
+
+header > div:last-child {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.lower-header {
+    width: 90%;
+    background-color: #1264a3;
+    margin: auto;
+    padding: 1rem 2rem;
+    height: 80px;
+    border-radius: 40px;
+}
+
+.promotion {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.promotion p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.promotion span a{
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1rem;
+    transition: 1s;
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+.promotion span a:hover{
+    transform: scale(1.1);
+}
+
+use[href$="close"]:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/** MAIN */
+main > .container {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 6rem;
+}
+
+.hero {
+    height: 60vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%), url(.././images/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.channels h2 {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.channels p {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    width: 80%;
+    margin: 0.5rem auto;
+}
+
+.channel-templates {
+    width: 94%;
+    margin: 2rem auto;
+    border: 1px solid #eee;
+    padding: 1rem;
+    box-shadow: 2px 2px 4px #ddd;
+    color: #333;
+}
+
+.channel-templates h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.channel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.channel {
+    display: block  ;
+    width: 30%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 4px #ddd;
+}
+
+.channel img {
+    width: 100%;
+}
+
+.channel h4 {
+    color: #333;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.channel-templates > div:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+.channel-templates > div:last-child > a {
+    background-color: #541554;
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+
+.channel-templates > div:last-child > a:hover {
+    background-color: #fff;
+    color: #541554;
+    border: 1px solid #541554;
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Security */
+.secure {
+    height: 100vh;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.secure-text {
+    width: 50%;
+    align-self: center;
+}
+
+.secure-text h2{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.secure-text p{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.secure-text > a {
+    text-align: center;
+    display: block;
+    background-color: #1264a3;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    width: 200px;
+    transition: 0.5s;
+}
+
+.secure-text > a:hover {
+    background-color: #fff;
+    color: #1264a3;
+    border: 1px solid #1264a3;
+}
+
+.secure-image {
+    width: 40%;
+    background-image: url(.././images/lock.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Slackverse */
+.slackverse {
+    /* background-color: rgb(17, 17, 17); */
+    background-color: #1c1c1e;
+    color: #fff;
+    padding: 2rem;
+}
+
+.slackverse h2,
+.contact h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+    max-width: 750px;
+    margin: 0.5rem auto;
+}
+
+.slackverse h2+p,
+.contact h2+p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.slackverse form {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.slackverse .input-wrapper {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 1rem;
+    display: flex;
+}
+
+.input-wrapper svg {
+    fill: #1c1c1e;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.slackverse input {
+    width: 90%;
+    padding: 0.8rem;
+    border: none;
+}
+
+.shared-projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    justify-content: space-around;
+}
+
+.shared-project {
+    border: 1px solid #333;
+    box-shadow: 2px 2px 4px #444;
+    padding: 0.5rem;
+    margin: 2rem 1rem;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.creator img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.company {
+    margin-right: 0.8rem;
+}
+
+.creator-text p:first-child {
+    margin-bottom: 6px;
+}
+
+.slackverse > a {
+    text-align: center;
+    display: block;
+    background-color: #1264a3;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    width: 200px;margin: 0 auto;
+    transition: 0.5s;
+}
+
+.slackverse > a:hover {
+    background-color: #fff;
+    color: #1264a3;
+}
+
+/* blog - latest */
+.latest h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.latest-items {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.latest-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 64vh;
+}
+
+.latest-item:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.latest-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.latest-item p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.latest-item a {
+    text-align: center;
+    background-color: #1264a3;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    width: 200px;margin: 0 auto;
+    transition: 0.5s;
+}
+
+.latest-item a:hover {
+    background-color: #fff;
+    color: #1264a3;
+    border: 1px solid #1264a3;
+}
+
+.latest-item > div:first-child {
+    width: 90%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.latest-item > div:last-child {
+    width: 80%;
+    align-self: center;
+}
+
+.artificial-intelligence {
+    background-image: url(.././images/artificial-intelligence.png);
+}
+
+.new-york {
+    background-image: url(.././images/statue-of-liberty.png);
+}
+
+.slack-chatgpt {
+    background-image: url(.././images/robots-computers.png);
+}
+
+.productivity {
+    background-image: url(.././images/notes.png);
+}
+
+/* Contact */
+.contact {
+    background-color: #1c1c1e;
+    color: #fff;
+    padding: 2rem;
+}
+
+.contact form {
+    /* border: 2px solid #eee; */
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #eee;
+    width: 40%;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-width: 600px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.contact form > div {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.contact input,
+textarea {
+    display: block;
+    margin: 5px 0 1rem;
+}
+
+.contact input {
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 5px;
+    /* outline: none;*/
+    border: none;
+}
+
+.contact label::after{
+    content: " *";
+    color: red;
+}
+
+.contact label[for="phone"]::after{
+    content: " ";
+    
+}
+
+textarea {
+    width: 100%;
+}
+
+.contact input[type="submit"] {
+    background-color: #1264a3;
+    color: #fff;
+    width: 300px;
+    margin: 2rem auto;
+    transition: 0.5s;
+}
+
+.contact input[type="submit"]:hover {
+    background-color: #fff;
+    color: #1264a3;
+}
+/* Footer */
+footer {
+    padding: 2rem;
+    /* background-color: #1c1c1e; */
+    background-color: #541554;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mid-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 6rem 0;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+footer form {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+footer input {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+footer input[type="email"] {
+    width: 300px;
+}
+
+footer input[type="submit"] {
+    background-color: #1264a3;
+    color: #fff;
+    transition: 0.5s;
+}
+
+footer input[type="submit"]:hover {
+    background-color: #fff;
+    color: #1264a3;
+}
+
+.mid-footer h3 {
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.mid-footer li {
+    margin-bottom: 0.8rem;
+}
+
+.mid-footer a {
+    letter-spacing: 2px;
+}
+
+.lower-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
